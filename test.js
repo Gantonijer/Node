@@ -13,7 +13,7 @@ fs.readdir(process.argv[2],function(err,list){
         
     }
     else
-    console.log(err);
+        console.log(err);
 });
 
 
