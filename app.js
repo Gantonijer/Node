@@ -1,15 +1,8 @@
-var fs= require('fs');
-var path=require('path');
-
-var sufix=process.argv[3];
-var filterDir=require('./module.js')
-
-filterDir(process.argv[2],sufix,function(err,data){
-    if(err)
-      return console.log(err)
-
-    data.forEach(function(file){
-        console.log(file);
+var http=require('http');
+http.get(process.argv[2],function(response){
+    response.setEncoding('utf8')
+    response.on('data',function(data){
+        console.log(data);
     })
 
 })
